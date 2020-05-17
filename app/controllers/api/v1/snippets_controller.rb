@@ -5,8 +5,13 @@ module Api
     class SnippetsController < ApplicationController
 
       def index
-        snippets = Snippet.order('created_at DESC')
-        render json: {status: 'SUCCESS', message: 'Loaded articles', data: snippets}, status: :ok
+        snippets = Snippet.order('updated_at ASC')
+        render json: {status: 'SUCCESS', message: 'Loaded snippets', data: snippets}, status: :ok
+      end
+
+      def show
+        snippet = Snippet.find(params[:id])
+        render json: {status: 'SUCCESS', message: 'Loaded snippet', data: snippet}, status: :ok
       end
 
       def create
@@ -25,7 +30,7 @@ module Api
       private
 
       def snippet_params
-        params.permit(:title, :snippet_type, :course, :raw, :notes)
+        params.permit(:title, :snippet_type, :course, :raw)
       end
 
     end

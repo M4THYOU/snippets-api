@@ -10,29 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_143041) do
+ActiveRecord::Schema.define(version: 2020_05_17_182524) do
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.string "code"
+    t.string "code", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "code_UNIQUE", unique: true
+  end
+
+  create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "snippet_id"
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "snippets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
-    t.string "type"
-    t.string "class"
-    t.text "raw"
+    t.string "title", null: false
+    t.string "snippet_type", null: false
+    t.string "course", null: false
+    t.text "raw", null: false
     t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["course"], name: "course_idx1"
+    t.index ["snippet_type"], name: "snippet_type_idx"
   end
 
   create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "name_UNIQUE", unique: true
   end
 
+  add_foreign_key "snippets", "courses", column: "course", primary_key: "code", name: "course"
+  add_foreign_key "snippets", "types", column: "snippet_type", primary_key: "name", name: "snippet_type"
 end
