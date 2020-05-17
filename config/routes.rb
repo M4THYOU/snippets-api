@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace 'v1' do
       get 'types', to: 'types#index'
       get 'courses', to: 'courses#index'
+
+      resources :snippets
     end
   end
 
