@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'courses', to: 'courses#index'
 
       resources :snippets
+      resources :notes
     end
   end
 

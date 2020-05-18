@@ -30,7 +30,7 @@ module Api
       private
 
       def snippet_params
-        params.permit(:title, :snippet_type, :course, :raw)
+        params.permit(:title, :snippet_type, :course, :raw, :is_title_math)
       end
 
     end
