@@ -3,11 +3,17 @@ Rails.application.routes.draw do
 
   namespace 'api' do
     namespace 'v1' do
+      resources :snippets
+      resources :notes
+
       get 'types', to: 'types#index'
       get 'courses', to: 'courses#index'
 
-      resources :snippets
-      resources :notes
+      post 'users', to: 'users#create'
+
+      # Authentication
+      post 'authenticate', to: 'authentication#authenticate'
+      get 'authenticate', to: 'authentication#verify'
     end
   end
 

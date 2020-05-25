@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_182524) do
+ActiveRecord::Schema.define(version: 2020_05_24_134515) do
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2020_05_17_182524) do
   end
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "snippet_id"
-    t.text "text"
+    t.integer "snippet_id", null: false
+    t.text "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2020_05_17_182524) do
     t.string "snippet_type", null: false
     t.string "course", null: false
     t.text "raw", null: false
-    t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "is_title_math", default: 0, null: false
     t.index ["course"], name: "course_idx1"
     t.index ["snippet_type"], name: "snippet_type_idx"
   end
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 2020_05_17_182524) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "name_UNIQUE", unique: true
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "snippets", "courses", column: "course", primary_key: "code", name: "course"
