@@ -3,6 +3,7 @@ require 'json'
 module Api
   module V1
     class NotesController < ApplicationController
+      include Indexing
 
       def index
         new_params = note_params
@@ -16,6 +17,7 @@ module Api
       def create
         new_params = note_params
         snippet_id = new_params['snippet_id']
+        snippet = Snippet.find(snippet_id)
         notes = new_params['notes']
         status = :ok
         if notes.length == 1
@@ -23,6 +25,7 @@ module Api
           note = create_single_note(snippet_id, notes[0].to_h)
           if note.save
             response = RenderJson.success 'Saved note', note
+            Indexing.reindex_single snippet
           else
             response = RenderJson.error 'Note not saved', []
             status = :unprocessable_entity
@@ -42,6 +45,7 @@ module Api
             status = :unprocessable_entity
           else
             response = RenderJson.success 'Saved notes', []
+            Indexing.reindex_single snippet
           end
         end
         render json: response, status: status
@@ -49,10 +53,12 @@ module Api
 
       def destroy
         note = Note.find(params[:id])
+        snippet = Snippet.find(note.snippet_id)
         if note.created_by_uid == @current_user.id
           note.destroy
           response = RenderJson.success 'Deleted note', note
           status = :ok
+          Indexing.reindex_single snippet
         else
           response = RenderJson.error 'Invalid permissions', note.errors
           status = :unauthorized

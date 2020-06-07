@@ -18,7 +18,21 @@ module Api
         current_user = AuthorizeApiRequest.call(request.headers).result
         is_authorized = false
         is_authorized = true if current_user
-        render json: { authorized: is_authorized }
+        user = safe_user current_user
+        render json: { authorized: is_authorized, user: user }
+      end
+
+      private
+
+      def safe_user(user)
+        if user
+          {
+            email: user.email,
+            id: user.id,
+            first_name: user.first_name,
+            last_name: user.last_name
+          }
+        end
       end
 
     end
