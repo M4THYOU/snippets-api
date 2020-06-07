@@ -23,18 +23,27 @@ ActiveRecord::Schema.define(version: 2020_05_24_134515) do
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "snippet_id", null: false
     t.text "text", null: false
+    t.integer "created_by_uid", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "search_indices", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "word", limit: 128, null: false
+    t.integer "snippet_id", null: false
+    t.integer "weight", default: 0
+    t.index ["word", "snippet_id"], name: "unique_index", unique: true
+  end
+
   create_table "snippets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
+    t.integer "is_title_math", default: 0, null: false
     t.string "snippet_type", null: false
     t.string "course", null: false
     t.text "raw", null: false
+    t.integer "created_by_uid", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "is_title_math", default: 0, null: false
     t.index ["course"], name: "course_idx1"
     t.index ["snippet_type"], name: "snippet_type_idx"
   end
@@ -47,13 +56,13 @@ ActiveRecord::Schema.define(version: 2020_05_24_134515) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "email_UNIQUE", unique: true
   end
 
   add_foreign_key "snippets", "courses", column: "course", primary_key: "code", name: "course"

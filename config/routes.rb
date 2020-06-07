@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
       post 'users', to: 'users#create'
 
-      post 'search', to: 'search_indices#index'
+      get 'search', to: 'search_indices#index'
 
       # Authentication
       post 'authenticate', to: 'authentication#authenticate'

@@ -8,13 +8,12 @@
 # Ignore words that are just 1 character.
 # Ignore some punctuation, like commas and periods. Keep curly braces though.
 
-require_relative 'snippet_parsing'
-
 module Indexing
+  include SnippetParsing
   # Module Constants
-  TITLE_WEIGHT = 25
-  SNIPPET_TEXT_WEIGHT = 10
-  NOTE_TEXT_WEIGHT = 5
+  TITLE_WEIGHT ||= 25
+  SNIPPET_TEXT_WEIGHT ||= 10
+  NOTE_TEXT_WEIGHT ||= 5
 
   ##
   # Converts a string into a hash of the given weights per word.
@@ -58,12 +57,12 @@ module Indexing
   end
 
   def self.note_search_hash(note, used)
-    search_note = raw_to_search_string note.text, 'raw'
+    search_note = SnippetParsing.raw_to_search_string note.text, 'raw'
     weight_note search_note, used
   end
 
   def self.snippet_search_hash(snippet)
-    search = raw_to_search_string snippet.raw, 'raw_snippet'
+    search = SnippetParsing.raw_to_search_string snippet.raw, 'raw_snippet'
     used = weight_snippet snippet.title.downcase, search, {}
 
     notes = Note.where(['snippet_id = ?', snippet.id])
