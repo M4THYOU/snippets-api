@@ -7,43 +7,25 @@ module Api
       def index
         new_params = note_params
         snippet_id = new_params['snippet_id']
+        notes = Note.where(['snippet_id = ?', snippet_id])
 
-        snippet = Snippet.find(snippet_id)
-        if snippet.created_by_uid == @current_user.id
-          notes = Note.where(['snippet_id = ?', snippet_id])
-          render json: {status: 'SUCCESS', message: 'Loaded notes', data: notes}, status: :ok
-        else
-          render json: {
-              status: 'ERROR',
-              message: 'You do not have permission to view these notes',
-              data: notes.errors
-          }, status: :unauthorized
-        end
+        response = RenderJson.success 'Loaded notes', notes
+        render json: response, status: :ok
       end
 
       def create
         new_params = note_params
-
         snippet_id = new_params['snippet_id']
-        snippet = Snippet.find(snippet_id)
         notes = new_params['notes']
-        if snippet.created_by_uid != @current_user.id
-          render json: {
-              status: 'ERROR',
-              message: 'You do not have permission to add a note to this snippet',
-              data: notes.errors
-          }, status: :unauthorized
-        elsif notes.length == 1
+        status = :ok
+        if notes.length == 1
           # if only creating 1 note.
           note = create_single_note(snippet_id, notes[0].to_h)
           if note.save
-            render json: { status: 'SUCCESS', message: 'Saved note', data: note }, status: :ok
+            response = RenderJson.success 'Saved note', note
           else
-            render json: {
-              status: 'ERROR',
-              message: 'Note not saved',
-              data: []
-            }, status: :unprocessable_entity
+            response = RenderJson.error 'Note not saved', []
+            status = :unprocessable_entity
           end
 
         else
@@ -56,29 +38,26 @@ module Api
             end
           end
           if had_error
-            render json: {
-                status: 'ERROR',
-                message: '1+ notes not saved',
-                data: []
-            }, status: :unprocessable_entity
+            response = RenderJson.error '1+ notes not saved', []
+            status = :unprocessable_entity
           else
-            render json: { status: 'SUCCESS', message: 'Saved notes', data: [] }, status: :ok
+            response = RenderJson.success 'Saved notes', []
           end
         end
+        render json: response, status: status
       end
 
       def destroy
         note = Note.find(params[:id])
         if note.created_by_uid == @current_user.id
           note.destroy
-          render json: {status: 'SUCCESS', message: 'Deleted note', data: note}, status: :ok
+          response = RenderJson.success 'Deleted note', note
+          status = :ok
         else
-          render json: {
-              status: 'ERROR',
-              message: 'You do not have permission to view these notes',
-              data: notes.errors
-          }, status: :unauthorized
+          response = RenderJson.error 'Invalid permissions', note.errors
+          status = :unauthorized
         end
+        render json: response, status: status
       end
 
       private

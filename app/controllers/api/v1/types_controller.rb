@@ -4,7 +4,8 @@ module Api
 
       def index
         types = Type.order('name')
-        render json: {status: 'SUCCESS', message: 'Loaded types', data: types}, status: :ok
+        response = RenderJson.success 'Loaded types', types
+        render json: response, status: :ok
       end
 
     end

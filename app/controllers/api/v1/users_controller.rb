@@ -9,22 +9,17 @@ module Api
       def create
         if @is_valid
           user = User.new(user_params)
+          status = :unprocessable_entity
           if user.save
-            render json: { status: 'SUCCESS', message: 'Saved user', data: user }, status: :ok
+            response = RenderJson.success 'Saved user', user
+            status = :ok
           else
-            render json: {
-              status: 'ERROR',
-              message: 'Error saving user.',
-              data: user.errors
-            }, status: :unprocessable_entity
+            response = RenderJson.error 'Error saving user', user.errors
           end
         else
-          render json: {
-            status: 'ERROR',
-            message: 'Invalid fields.',
-            data: nil
-          }, status: :unprocessable_entity
+          response = RenderJson.error 'Invalid fields', nil
         end
+        render json: response, status: status
       end
       
       def update; end

@@ -4,7 +4,8 @@ module Api
 
       def index
         courses = Course.order('code')
-        render json: {status: 'SUCCESS', message: 'Loaded courses', data: courses}, status: :ok
+        response = RenderJson.success 'Loaded courses', courses
+        render json: response, status: :ok
       end
 
     end

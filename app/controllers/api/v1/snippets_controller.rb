@@ -5,69 +5,56 @@ module Api
     class SnippetsController < ApplicationController
 
       def index
-        uid = @current_user.id
-        snippets = Snippet.where(['created_by_uid = ?', uid]).order('updated_at DESC')
-        render json: {status: 'SUCCESS', message: 'Loaded snippets', data: snippets}, status: :ok
+        snippets = Snippet.order('updated_at DESC').limit(50)
+        response = RenderJson.success 'Loaded Snippets', snippets
+        render json: response, status: :ok
       end
 
       def show
         snippet = Snippet.find(params[:id])
-        if snippet.created_by_uid == @current_user.id
-          render json: {status: 'SUCCESS', message: 'Loaded snippet', data: snippet}, status: :ok
-        else
-          render json: {
-            status: 'ERROR',
-            message: 'You do not have permission to view this snippet',
-            data: snippet.errors
-          }, status: :unauthorized
-        end
+        response = RenderJson.success 'Loaded snippet', snippet
+        render json: response, status: :ok
       end
 
       def create
         snippet = Snippet.new(snippet_params)
         snippet[:created_by_uid] = @current_user.id
         if snippet.save
-          render json: { status: 'SUCCESS', message: 'Saved snippet', data: snippet }, status: :ok
+          response = RenderJson.success 'Saved snippet', snippet
+          status = :ok
         else
-          render json: {
-            status: 'ERROR',
-            message: 'Snippet not saved',
-            data: snippet.errors
-          }, status: :unprocessable_entity
+          response = RenderJson.error 'Snippet not saved', snippet.errors
+          status = :unprocessable_entity
         end
+        render json: response, status: status
       end
 
       def update
         snippet = Snippet.find(params[:id])
         if snippet.created_by_uid != @current_user.id
-          render json: {
-            status: 'ERROR',
-            message: 'Invalid permissions',
-            data: nil
-          }, status: :unauthorized
+          response = RenderJson.error 'Invalid permissions', nil
+          status = :unauthorized
         elsif snippet.update_attributes(snippet_params)
-          render json: {status: 'SUCCESS', message: 'Updated snippet', data: snippet}, status: :ok
+          response = RenderJson.success 'Updated snippet', snippet
+          status = :ok
         else
-          render json: {
-            status: 'ERROR',
-            message: 'Snippet not updated',
-            data: snippet.errors
-          }, status: :unprocessable_entity
+          response = RenderJson.error 'Snippet not updated', snippet.errors
+          status = :unprocessable_entity
         end
+        render json: response, status: status
       end
 
       def destroy
         snippet = Snippet.find(params[:id])
         if snippet.created_by_uid == @current_user.id
           snippet.destroy
-          render json: {status: 'SUCCESS', message: 'Deleted snippet', data: snippet}, status: :ok
+          response = RenderJson.success 'Deleted snippet', snippet
+          status = :ok
         else
-          render json: {
-            status: 'ERROR',
-            message: 'Invalid permissions',
-            data: nil
-          }, status: :unauthorized
+          response = RenderJson.error 'Invalid permissions', nil
+          status = :unauthorized
         end
+        render json: response, status: status
       end
 
       private

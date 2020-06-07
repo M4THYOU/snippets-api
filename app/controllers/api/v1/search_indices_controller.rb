@@ -5,13 +5,15 @@ module Api
 
       def index
         query = search_params[:query]
-        Search.search query
-        # snippets = Snippet.where(['created_by_uid = ?', uid]).order('updated_at DESC')
-        render json: {status: 'SUCCESS', message: 'Loaded snippets', data: nil}, status: :ok
+        limit = search_params[:limit].to_i
+
+        result = Search.search query
+        lim_result = result.first limit
+        render json: {status: 'SUCCESS', message: 'Loaded snippets', data: lim_result}, status: :ok
       end
 
       def search_params
-        params.permit(:query)
+        params.permit(:query, :limit)
       end
 
     end
