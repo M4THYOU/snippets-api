@@ -64,7 +64,7 @@ module Api
       private
 
       def snippet_params
-        params.permit(:title, :snippet_type, :course, :raw, :is_title_math)
+        params.permit(:title, :snippet_type, :course, :raw)
       end
 
     end
