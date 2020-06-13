@@ -33,23 +33,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855f3dcf-2f34-418e-9777-e5fdb939a7eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/snippets-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/snippets-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/environment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environment.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="ProjectId" id="1dCGzkhui4XUCl6o9i8gtOyNPUf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -67,6 +82,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RunManager" selected="Rails.Development: snippets-api">
     <configuration name="Development: snippets-api" type="RailsRunConfigurationType" factoryName="Rails">
@@ -179,6 +196,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591921926007</updated>
       <workItem from="1591921930630" duration="1313000" />
+      <workItem from="1592056250774" duration="1370000" />
     </task>
     <servers />
   </component>
@@ -195,23 +213,55 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1354" height="258" key="GridCell.Tab.0.bottom" timestamp="1591922420026">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="201" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592057754428">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
+    <state x="201" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.949@0.23.1680.949" timestamp="1592057754428" />
+    <state width="1358" height="240" key="GridCell.Tab.0.bottom" timestamp="1592057875201">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1358" height="240" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1592057875201" />
     <state width="1354" height="258" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1591922420026" />
-    <state width="1354" height="258" key="GridCell.Tab.0.center" timestamp="1591922420025">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state width="1358" height="240" key="GridCell.Tab.0.center" timestamp="1592057875200">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
+    <state width="1358" height="240" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1592057875200" />
     <state width="1354" height="258" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1591922420025" />
-    <state width="1354" height="258" key="GridCell.Tab.0.left" timestamp="1591922420025">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state width="1358" height="240" key="GridCell.Tab.0.left" timestamp="1592057875199">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
+    <state width="1358" height="240" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1592057875199" />
     <state width="1354" height="258" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1591922420025" />
-    <state width="1354" height="258" key="GridCell.Tab.0.right" timestamp="1591922420026">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state width="1358" height="240" key="GridCell.Tab.0.right" timestamp="1592057875201">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
+    <state width="1358" height="240" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1592057875201" />
     <state width="1354" height="258" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1591922420026" />
+    <state width="1358" height="240" key="GridCell.Tab.1.bottom" timestamp="1592057875203">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1358" height="240" key="GridCell.Tab.1.bottom/0.23.1680.949@0.23.1680.949" timestamp="1592057875203" />
+    <state width="1358" height="240" key="GridCell.Tab.1.center" timestamp="1592057875202">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1358" height="240" key="GridCell.Tab.1.center/0.23.1680.949@0.23.1680.949" timestamp="1592057875202" />
+    <state width="1358" height="240" key="GridCell.Tab.1.left" timestamp="1592057875201">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1358" height="240" key="GridCell.Tab.1.left/0.23.1680.949@0.23.1680.949" timestamp="1592057875201" />
+    <state width="1358" height="240" key="GridCell.Tab.1.right" timestamp="1592057875202">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state width="1358" height="240" key="GridCell.Tab.1.right/0.23.1680.949@0.23.1680.949" timestamp="1592057875202" />
+    <state x="238" y="145" key="SettingsEditor" timestamp="1592056895979">
+      <screen x="0" y="23" width="1680" height="949" />
+    </state>
+    <state x="238" y="145" key="SettingsEditor/0.23.1680.949@0.23.1680.949" timestamp="1592056895979" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/snippets_api@Development__snippets_api.rcov" NAME="Development: snippets-api Coverage Results" MODIFIED="1592057855493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
   </component>
 </project>
