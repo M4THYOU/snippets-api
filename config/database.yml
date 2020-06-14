@@ -59,6 +59,4 @@ test:
 #
 production:
   <<: *aws
-  database: snippets__s
-  username: admin
-  password: <%= ENV['SNIPPETS_API_DATABASE_PASSWORD'] %>
+  database: snippets

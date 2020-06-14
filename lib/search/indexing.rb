@@ -111,4 +111,4 @@ module Indexing
 
 end
 
-Indexing.main
+# Indexing.main
