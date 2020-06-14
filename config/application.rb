@@ -24,7 +24,7 @@ module SnippetsApi
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins %w[localhost:4000 https://snippets-api-v1.herokuapp.com]
+        origins %w[localhost:4000 https://pedantic-mcclintock-cb8836.netlify.app https://qwaked.com]
         resource '*', headers: :any, methods: [:get, :post, :patch, :delete, :options]
       end
     end
