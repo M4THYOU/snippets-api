@@ -24,7 +24,7 @@ module SnippetsApi
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins ['localhost:4000']
+        origins %w[localhost:4000 https://snippets-api-v1.herokuapp.com]
         resource '*', headers: :any, methods: [:get, :post, :patch, :delete, :options]
       end
     end
