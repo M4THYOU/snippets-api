@@ -6,6 +6,9 @@ class JsonWebToken
       secret = Rails.application.secrets.secret_key_base || Rails.application.credentials.secret_key_base
       puts secret
       puts secret.nil?
+      secret2 = Rails.application.credentials.dig(:secret_key_base)
+      puts secret2
+      puts secret2.nil?
       JWT.encode(payload, secret)
     end
 
