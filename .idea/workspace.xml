@@ -33,13 +33,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855f3dcf-2f34-418e-9777-e5fdb939a7eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/snippets-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/snippets-api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/amazon-rds-ca-cert.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/json_web_token.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/json_web_token.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/search/indexing.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/search/indexing.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +204,7 @@
       <workItem from="1592056250774" duration="1688000" />
       <workItem from="1592061848472" duration="630000" />
       <workItem from="1592090445276" duration="1817000" />
-      <workItem from="1592139002665" duration="3641000" />
+      <workItem from="1592139002665" duration="5395000" />
     </task>
     <servers />
   </component>
