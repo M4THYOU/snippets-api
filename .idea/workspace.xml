@@ -33,8 +33,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855f3dcf-2f34-418e-9777-e5fdb939a7eb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +90,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
   </component>
   <component name="RubyModuleManagerSettings">
     <option name="blackListedRootsPaths">
@@ -216,6 +219,7 @@
       <workItem from="1592608956980" duration="2065000" />
       <workItem from="1592657328660" duration="1107000" />
       <workItem from="1592662815853" duration="2583000" />
+      <workItem from="1592750376452" duration="46000" />
     </task>
     <servers />
   </component>
@@ -284,10 +288,10 @@
     </state>
     <state width="1358" height="240" key="GridCell.Tab.1.right/0.23.1680.949@0.23.1680.949" timestamp="1592059739542" />
     <state width="1802" height="248" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311761" />
-    <state x="686" y="167" width="1022" height="737" key="SettingsEditor" timestamp="1592609189463">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="238" y="145" width="1022" height="737" key="SettingsEditor" timestamp="1592750420973">
+      <screen x="0" y="23" width="1680" height="949" />
     </state>
-    <state x="238" y="145" key="SettingsEditor/0.23.1680.949@0.23.1680.949" timestamp="1592056895979" />
+    <state x="238" y="145" key="SettingsEditor/0.23.1680.949@0.23.1680.949" timestamp="1592750420973" />
     <state x="686" y="167" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1592609189463" />
     <state x="554" y="291" width="658" height="554" key="find.popup" timestamp="1592672297010">
       <screen x="72" y="27" width="1848" height="1053" />
@@ -296,7 +300,7 @@
     <state x="554" y="291" width="658" height="554" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592672297010" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/snippets_api@Development__snippets_api.rcov" NAME="Development: snippets-api Coverage Results" MODIFIED="1592672311730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
     <SUITE FILE_PATH="coverage/snippets_api@Production__snippets_api.rcov" NAME="Production: snippets-api Coverage Results" MODIFIED="1592657348944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
+    <SUITE FILE_PATH="coverage/snippets_api@Development__snippets_api.rcov" NAME="Development: snippets-api Coverage Results" MODIFIED="1592750383435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
   </component>
 </project>
