@@ -301,6 +301,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/snippets_api@Production__snippets_api.rcov" NAME="Production: snippets-api Coverage Results" MODIFIED="1592657348944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
-    <SUITE FILE_PATH="coverage/snippets_api@Development__snippets_api.rcov" NAME="Development: snippets-api Coverage Results" MODIFIED="1592750424381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
+    <SUITE FILE_PATH="coverage/snippets_api@Development__snippets_api.rcov" NAME="Development: snippets-api Coverage Results" MODIFIED="1592763723485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
   </component>
 </project>
