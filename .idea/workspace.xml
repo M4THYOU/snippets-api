@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855f3dcf-2f34-418e-9777-e5fdb939a7eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/api/v1/lessons_controller.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20200621180935_add_created_by_uid_to_lessons.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +204,7 @@
       <workItem from="1592657328660" duration="1107000" />
       <workItem from="1592662815853" duration="2583000" />
       <workItem from="1592750376452" duration="576000" />
-      <workItem from="1592762168682" duration="1550000" />
+      <workItem from="1592762168682" duration="2092000" />
     </task>
     <servers />
   </component>
