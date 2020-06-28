@@ -43,5 +43,13 @@ module SnippetsApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # creating constants
+    config.x.u_group_types.lesson = 'lesson'
+
+    config.x.u_role_types.lesson_member = 'lesson_member'
+    config.x.u_role_types.lesson_owner = 'lesson_owner'
+
+
   end
 end
