@@ -1,78 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="855f3dcf-2f34-418e-9777-e5fdb939a7eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/u_group.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/u_role.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view_models/lessons_by_uid.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="0d40252f-2f84-427f-9351-bc3c71feffdc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/snippets-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/snippets-api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/lessons_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/lessons_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Ruby File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="false" />
-    <option name="FILTER_DEBUG" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="1dCGzkhui4XUCl6o9i8gtOyNPUf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1dwrbpTKj7IeEzajWLP79HKUcc8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../snippets-api-deploy" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,15 +40,6 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
-  </component>
-  <component name="RubyModuleManagerSettings">
-    <option name="blackListedRootsPaths">
-      <list>
-        <option value="$PROJECT_DIR$" />
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Rails.Development: snippets-api">
     <configuration name="Development: snippets-api" type="RailsRunConfigurationType" factoryName="Rails">
@@ -195,108 +146,57 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="855f3dcf-2f34-418e-9777-e5fdb939a7eb" name="Default Changelist" comment="" />
-      <created>1591921926007</created>
+      <changelist id="0d40252f-2f84-427f-9351-bc3c71feffdc" name="Default Changelist" comment="" />
+      <created>1593347070575</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1591921926007</updated>
-      <workItem from="1591921930630" duration="1313000" />
-      <workItem from="1592056250774" duration="1688000" />
-      <workItem from="1592061848472" duration="630000" />
-      <workItem from="1592090445276" duration="1817000" />
-      <workItem from="1592139002665" duration="9005000" />
-      <workItem from="1592607728563" duration="1049000" />
-      <workItem from="1592608805248" duration="125000" />
-      <workItem from="1592608956980" duration="2065000" />
-      <workItem from="1592657328660" duration="1107000" />
-      <workItem from="1592662815853" duration="2583000" />
-      <workItem from="1592750376452" duration="576000" />
-      <workItem from="1592762168682" duration="2092000" />
-      <workItem from="1593287879199" duration="4137000" />
+      <updated>1593347070575</updated>
+      <workItem from="1593347075294" duration="1914000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="293" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592140067458">
+    <state width="1802" height="182" key="GridCell.Tab.0.bottom" timestamp="1593347645954">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="201" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.949@0.23.1680.949" timestamp="1592057754428" />
-    <state x="293" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1592140067458" />
-    <state x="555" y="285" width="424" height="491" key="FileChooserDialogImpl" timestamp="1592139610667">
+    <state width="1802" height="182" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645954" />
+    <state width="1802" height="182" key="GridCell.Tab.0.center" timestamp="1593347645954">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="555" y="285" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1592139610667" />
-    <state width="1358" height="235" key="GridCell.Tab.0.bottom" timestamp="1593308113077">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1802" height="182" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645954" />
+    <state width="1802" height="182" key="GridCell.Tab.0.left" timestamp="1593347645954">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1358" height="235" key="GridCell.Tab.0.bottom/0.23.1680.949@0.23.1680.949" timestamp="1593308113077" />
-    <state width="1802" height="248" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311761" />
-    <state width="1358" height="235" key="GridCell.Tab.0.center" timestamp="1593308113076">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1802" height="182" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645954" />
+    <state width="1802" height="182" key="GridCell.Tab.0.right" timestamp="1593347645954">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1358" height="235" key="GridCell.Tab.0.center/0.23.1680.949@0.23.1680.949" timestamp="1593308113076" />
-    <state width="1802" height="248" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311760" />
-    <state width="1358" height="235" key="GridCell.Tab.0.left" timestamp="1593308113075">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1802" height="182" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645954" />
+    <state width="1802" height="182" key="GridCell.Tab.1.bottom" timestamp="1593347645955">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1358" height="235" key="GridCell.Tab.0.left/0.23.1680.949@0.23.1680.949" timestamp="1593308113075" />
-    <state width="1802" height="248" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311760" />
-    <state width="1358" height="235" key="GridCell.Tab.0.right" timestamp="1593308113077">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1802" height="182" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645955" />
+    <state width="1802" height="182" key="GridCell.Tab.1.center" timestamp="1593347645955">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1358" height="235" key="GridCell.Tab.0.right/0.23.1680.949@0.23.1680.949" timestamp="1593308113077" />
-    <state width="1802" height="248" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311760" />
-    <state width="1358" height="235" key="GridCell.Tab.1.bottom" timestamp="1593308113079">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1802" height="182" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645955" />
+    <state width="1802" height="182" key="GridCell.Tab.1.left" timestamp="1593347645955">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1358" height="235" key="GridCell.Tab.1.bottom/0.23.1680.949@0.23.1680.949" timestamp="1593308113079" />
-    <state width="1802" height="248" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311761" />
-    <state width="1358" height="235" key="GridCell.Tab.1.center" timestamp="1593308113078">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1802" height="182" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645955" />
+    <state width="1802" height="182" key="GridCell.Tab.1.right" timestamp="1593347645955">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1358" height="235" key="GridCell.Tab.1.center/0.23.1680.949@0.23.1680.949" timestamp="1593308113078" />
-    <state width="1802" height="248" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311761" />
-    <state width="1358" height="235" key="GridCell.Tab.1.left" timestamp="1593308113078">
-      <screen x="0" y="23" width="1680" height="949" />
+    <state width="1802" height="182" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1593347645955" />
+    <state x="688" y="276" width="616" height="554" key="find.popup" timestamp="1593347850778">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1358" height="235" key="GridCell.Tab.1.left/0.23.1680.949@0.23.1680.949" timestamp="1593308113078" />
-    <state width="1802" height="248" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311761" />
-    <state width="1358" height="235" key="GridCell.Tab.1.right" timestamp="1593308113079">
-      <screen x="0" y="23" width="1680" height="949" />
-    </state>
-    <state width="1358" height="235" key="GridCell.Tab.1.right/0.23.1680.949@0.23.1680.949" timestamp="1593308113079" />
-    <state width="1802" height="248" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1592672311761" />
-    <state x="238" y="145" width="1022" height="737" key="SettingsEditor" timestamp="1593287927311">
-      <screen x="0" y="23" width="1680" height="949" />
-    </state>
-    <state x="238" y="145" key="SettingsEditor/0.23.1680.949@0.23.1680.949" timestamp="1593287927311" />
-    <state x="686" y="167" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1592609189463" />
-    <state x="438" y="261" width="598" height="522" key="find.popup" timestamp="1593296603061">
-      <screen x="0" y="23" width="1680" height="949" />
-    </state>
-    <state x="438" y="261" width="598" height="522" key="find.popup/0.23.1680.949@0.23.1680.949" timestamp="1593296603061" />
-    <state x="554" y="291" width="658" height="554" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592672297010" />
+    <state x="688" y="276" width="616" height="554" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1593347850778" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/snippets_api@Production__snippets_api.rcov" NAME="Production: snippets-api Coverage Results" MODIFIED="1592657348944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
-    <SUITE FILE_PATH="coverage/snippets_api@Development__snippets_api.rcov" NAME="Development: snippets-api Coverage Results" MODIFIED="1593298637047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
+    <SUITE FILE_PATH="coverage/snippets_api@Development__snippets_api.rcov" NAME="Development: snippets-api Coverage Results" MODIFIED="1593347096380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="snippets-api" />
   </component>
 </project>

@@ -8,7 +8,12 @@ module Api
         render json: response, status: :ok
       end
 
-      def show; end
+      def show
+        uid = @current_user.id
+        lessons = LessonsByUid.order('group_order ASC').where(['uid = ? and group_id = ?', uid, params[:id]])
+        response = RenderJson.success 'Loaded lessons', lessons
+        render json: response, status: :ok
+      end
 
       def create
         uid = @current_user.id
