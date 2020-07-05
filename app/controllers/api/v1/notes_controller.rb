@@ -74,9 +74,9 @@ module Api
 
       def create_single_note(snippet_id, text)
         new_note = {
-          snippet_id: snippet_id,
-          text: text.to_json,
-          created_by_uid: @current_user.id
+            snippet_id: snippet_id,
+            text: text.to_json,
+            created_by_uid: @current_user.id
         }
         note = Note.new(new_note)
         if note.save
