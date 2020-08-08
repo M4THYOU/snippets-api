@@ -17,20 +17,22 @@ module Api
           return
         end
 
-        user = User.use_index('email_UNIQUE').where(['email = ?', email])
-        if user
-          puts 'a' which one is running???
-          # just add role
-        else
-          invitation = Invitation.use_index('email_UNIQUE').where(['email = ? and used_at IS ?', email, nil])
-          if invitation
-            puts 'b'
-            # add it to the meta field
-          else
+        user = User.use_index('email_UNIQUE').where(['email = ?', email]).first
+        if user.nil?
+          invitation = Invitation.use_index('email_UNIQUE').where(['email = ? and used_at IS ?', email, nil]).first
+          if invitation.nil?
             puts 'c'
             hash = SecureRandom.hex
             puts hash
+          else
+            puts 'b'
+            # add it to the meta field
           end
+        else
+          puts 'a'
+          puts user.email
+          puts user.first_name
+          # just add role
         end
 
         render json: response, status: status
