@@ -4,11 +4,10 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: { message: 'A user with that email already exists.', case_sensitive: true }
 
-  def self.role_action?(uid, group_id, role_type)
-    roles = URole.where(['group_id = ? and uid = ? and role_type = ? and is_revoked = ?', group_id, uid, role_type, 0])
-    puts roles
+  def role_action?(group_id, role_type)
+    roles = URole.where(['group_id = ? and uid = ? and role_type = ? and is_revoked = ?', group_id, id, role_type, 0])
     success = true
-    success = false unless roles
+    success = false if roles.blank?
     success
   end
 

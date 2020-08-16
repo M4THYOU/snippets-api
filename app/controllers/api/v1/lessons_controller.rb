@@ -30,7 +30,7 @@ module Api
         # URole.create({role_type: Rails.configuration.x.u_role_types.lesson_member, uid: uid, group_id: group.id, created_by_uid: uid})
         URole.create({role_type: Rails.configuration.x.u_role_types.lesson_owner, uid: uid, group_id: group.id, created_by_uid: uid})
         # create lessons
-        if create_pages(pages, group.id, title, course, uid)
+        if create_pages(pages, group.id, title, course)
           response = RenderJson.success 'Saved lesson', { group_id: group.id }
           status = :ok
         end
@@ -44,17 +44,21 @@ module Api
         uid = @current_user.id
         group_id = params[:id]
 
-        roles = URole.where(['group_id = ? and uid = ? and role_type = ? and is_revoked = ?', group_id, uid, Rails.configuration.x.u_role_types.lesson_owner, 0])
-        unless roles.empty?
+        if User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.lesson_owner)
           title = lesson_update_params[:title]
           course = lesson_update_params[:course]
           pages = lesson_update_params[:pages]
 
-          Lesson.where(['group_id = ?', group_id]).delete_all
-          if create_pages(pages, group_id, title, course, uid)
+          if update_pages(pages, group_id, title, course)
             response = RenderJson.success 'Updated lesson', { group_id: group_id }
             status = :ok
           end
+
+          # Lesson.where(['group_id = ?', group_id]).delete_all
+          # if create_pages(pages, group_id, title, course, uid)
+          #   response = RenderJson.success 'Updated lesson', { group_id: group_id }
+          #   status = :ok
+          # end
         end
 
         render json: response, status: status
@@ -67,8 +71,7 @@ module Api
         uid = @current_user.id
         group_id = params[:id]
 
-        roles = URole.where(['group_id = ? and uid = ? and role_type = ? and is_revoked = ?', group_id, uid, Rails.configuration.x.u_role_types.lesson_owner, 0])
-        unless roles.empty?
+        if User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.lesson_owner)
           URole.where(['group_id = ?', group_id]).update_all(is_revoked: 1)
           Lesson.where(['group_id = ?', group_id]).delete_all
           UGroup.delete(group_id)
@@ -88,16 +91,44 @@ module Api
         params.permit(:title, :course, pages: %i[group_order canvas group_id created_at])
       end
 
-      def create_pages(pages, group_id, title, course, uid)
+      def create_pages(pages, group_id, title, course)
         success = false
         pages.each do |page|
-          lesson = Lesson.new(page)
-          lesson[:created_by_uid] = uid
-          lesson[:group_id] = group_id
-          lesson[:title] = title
-          lesson[:course] = course
+          success = true if create_page(page, group_id, title, course)
+        end
+        success
+      end
 
-          success = true if lesson.save
+      def create_page(page, group_id, title, course)
+        success = false
+        lesson = Lesson.new(page)
+        lesson[:created_by_uid] = @current_user.id
+        lesson[:group_id] = group_id
+        lesson[:title] = title
+        lesson[:course] = course
+        success = true if lesson.save
+        success
+      end
+
+      def update_pages(pages, group_id, title, course)
+        success = false
+        lessons = Lesson.order('group_order ASC').where(['group_id = ?', group_id])
+        i = 0
+        while i < pages.length || i < lessons.length
+          p = pages[i]
+          l = lessons[i]
+
+          if p.nil? || JSON.parse(p[:canvas])['raw_canvas'].empty? # then there exists a lesson. Delete it.
+            l.delete
+          elsif l.nil? # then there exists a page. Create the lesson.
+            success = true if create_page(p, group_id, title, course)
+          else # then there exists page and lesson. Update the lesson with p.canvas
+          puts 'aaaa'
+            puts p
+            l.canvas = p[:canvas]
+            success = true if l.save
+          end
+          i += 1
         end
         success
       end

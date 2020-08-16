@@ -14,7 +14,7 @@ module Api
         uid = @current_user.id
         email = invitation_params[:email]
         group_id = invitation_params[:group_id]
-        unless User.select(uid).role_action?(uid, group_id, Rails.configuration.x.u_role_types.lesson_owner)
+        unless User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.lesson_owner)
           render json: response, status: status
           return
         end
