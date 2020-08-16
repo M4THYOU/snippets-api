@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       get 'courses', to: 'courses#index'
 
       post 'users', to: 'users#create'
+      patch 'users/confirm', to: 'users#confirm_email'
+      post 'users/send-confirm', to: 'users#send_confirm_email'
 
       post 'invitations', to: 'invitations#create'
 

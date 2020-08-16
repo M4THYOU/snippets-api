@@ -8,7 +8,7 @@ class AuthenticateUser
 
   # creates a token for the given user.
   def call
-    JsonWebToken.encode(user_id: user.id) if user
+    JsonWebToken.encode(user_id: user.id) if user&.is_active
   end
 
   private

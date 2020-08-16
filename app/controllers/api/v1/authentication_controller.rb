@@ -6,8 +6,13 @@ module Api
       # post
       def authenticate
         command = AuthenticateUser.call(params[:email], params[:password])
-        if command.success?
+        if command.success? && command.result.present?
           render json: { auth_token: command.result }
+        elsif command.success? # account not activated yet.
+          error = { 'user_authentication': 'Please confirm your email address.', 'confirm_email': true }
+          # command.errors.error = { 'user_authentication': 'Please confirm your email address.' }
+          # command.errors.error['user_authentication'] = 'Please confirm your email address.'
+          render json: { error: error }, status: :forbidden
         else
           render json: { error: command.errors }, status: :unauthorized
         end

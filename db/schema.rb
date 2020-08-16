@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_221942) do
+ActiveRecord::Schema.define(version: 2020_08_09_173034) do
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 2020_07_04_221942) do
     t.integer "created_by_uid", null: false
     t.string "email", null: false
     t.text "meta"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.index ["email"], name: "email_UNIQUE", unique: true
   end
 
   create_table "lessons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -116,11 +117,13 @@ ActiveRecord::Schema.define(version: 2020_07_04_221942) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.string "email"
+    t.string "email", null: false
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "email"
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.boolean "is_active", default: false, null: false
+    t.string "confirm_token"
+    t.index ["email"], name: "email_UNIQUE", unique: true
   end
 
   add_foreign_key "snippets", "courses", column: "course", primary_key: "code", name: "course"
