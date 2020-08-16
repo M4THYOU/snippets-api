@@ -8,8 +8,15 @@ module Api
 
       def create
         if @is_valid
-          user = User.new(user_params)
           status = :unprocessable_entity
+          user = User.find_by_email(user_params[:email])
+
+          if user.nil?
+            user = User.new(user_params)
+          else
+            user.assign_attributes(user_params)
+            user.is_invited = false
+          end
           if user.save
             UserMailer.with(user: user).register_confirm.deliver_later
             response = RenderJson.success 'Saved user', user

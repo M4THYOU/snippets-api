@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'securerandom'
 
 module Api
@@ -17,22 +19,22 @@ module Api
           return
         end
 
-        user = User.use_index('email_UNIQUE').where(['email = ?', email]).first
+        user = User.find_by_email(email)
         if user.nil?
-          invitation = Invitation.use_index('email_UNIQUE').where(['email = ? and used_at IS ?', email, nil]).first
-          if invitation.nil?
-            puts 'c'
-            hash = SecureRandom.hex
-            puts hash
-          else
-            puts 'b'
-            # add it to the meta field
-          end
+          user = User.create({ email: email, password: '0', password_confirmation: '0', is_invited: 1 })
+          user.add_role(uid, Rails.configuration.x.u_role_types.lesson_member, group_id)
+
+          UserMailer.with(user: user, from_user: @current_user).account_invite.deliver_later
+
+          response = RenderJson.success 'User Invited', {}
+          status = :ok
         else
-          puts 'a'
-          puts user.email
-          puts user.first_name
-          # just add role
+          user.add_role(uid, Rails.configuration.x.u_role_types.lesson_member, group_id)
+
+          UserMailer.with(user: user, from_user: @current_user).note_invite.deliver_later
+
+          response = RenderJson.success 'User Invited', {}
+          status = :ok
         end
 
         render json: response, status: status

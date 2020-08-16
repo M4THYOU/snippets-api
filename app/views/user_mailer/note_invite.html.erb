@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1><%= @inviter.first_name %> <%= @inviter.last_name %> sent you an invite!</h1>
+
+<p>Your friend, <%= @inviter.first_name %> <%= @inviter.last_name %>, has invited you to view a note on Snippets.</p>
+<p>Please <a href="<%= @url %>">login</a> to view it.</p>
+<p><%= @url %></p>
+
+</body>
+</html>

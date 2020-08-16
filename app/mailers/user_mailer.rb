@@ -1,19 +1,32 @@
 class UserMailer < ApplicationMailer
   default from: 'mathyou.wolfe@gmail.com'
 
-  def confirm_email_user_url(token)
+  def base_url
     if Rails.env.production?
-      'https://qwaked.com/register/' + token
+      'https://qwaked.com/'
     else
-      'http://localhost:4000/register/' + token
+      'http://localhost:4000/'
     end
   end
 
   def register_confirm
-    puts 'sending email'
     @user = params[:user]
-    @url = confirm_email_user_url(@user.confirm_token)
+    @url = base_url + 'register/' + @user.confirm_token
     mail(to: @user.email, subject: 'Snippets email confirmation')
+  end
+
+  def account_invite
+    @user = params[:user]
+    @inviter = params[:from_user]
+    @url = base_url + 'register'
+    mail(to: @user.email, subject: 'Snippets Invitation')
+  end
+
+  def note_invite
+    @user = params[:user]
+    @inviter = params[:from_user]
+    @url = base_url + 'login'
+    mail(to: @user.email, subject: 'Snippets Invitation')
   end
 
 end

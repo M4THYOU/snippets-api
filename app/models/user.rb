@@ -12,6 +12,13 @@ class User < ApplicationRecord
     success
   end
 
+  def add_role(created_by_uid, role, group_id)
+    role = {
+      role_type: role, uid: id, group_id: group_id, created_by_uid: created_by_uid, is_revoked: 0
+    }
+    URole.create(role)
+  end
+
   def self.use_index(index)
     from("#{table_name} USE INDEX(#{index})")
   end
