@@ -18,6 +18,9 @@ gem 'bcrypt'
 gem 'jwt'
 gem 'simple_command'
 
+# rate limiting.
+gem 'rack-attack'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
