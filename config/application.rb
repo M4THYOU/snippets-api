@@ -46,9 +46,10 @@ module SnippetsApi
 
     # creating constants
     config.x.u_group_types.lesson = 'lesson'
+    config.x.u_group_types.lesson = 'snippet'
 
-    config.x.u_role_types.lesson_member = 'lesson_member'
-    config.x.u_role_types.lesson_owner = 'lesson_owner'
+    config.x.u_role_types.lesson_member = 'member'
+    config.x.u_role_types.lesson_owner = 'owner'
 
 
   end
