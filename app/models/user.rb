@@ -11,6 +11,16 @@ class User < ApplicationRecord
     success
   end
 
+  # role_types is an array of role_types that will return true if any match.
+  def role_actions?(group_id, role_types)
+    puts group_id
+    puts role_types
+    roles = URole.where(['group_id = ? and uid = ? and role_type = ? and is_revoked = ?', group_id, id, role_types, 0])
+    success = true
+    success = false if roles.blank?
+    success
+  end
+
   def add_role(created_by_uid, role, group_id)
     role = {
       role_type: role, uid: id, group_id: group_id, created_by_uid: created_by_uid, is_revoked: 0

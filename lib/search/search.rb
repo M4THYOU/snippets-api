@@ -24,11 +24,13 @@ module Search
       current_h
     end
 
-    def sort_snippets(snippets, search_h)
+    def sort_snippets(snippets, search_h, user)
       h = {}
       a = []
       snippets.each do |snippet|
-        h[snippet] = search_h[snippet.id] # {Snippet => weight}
+        if snippet.user_has_access?(user)
+          h[snippet] = search_h[snippet.id] # {Snippet => weight}
+        end
       end
       h.sort_by { |_key, val| val }.reverse # stored as [[Snippet, weight] ...]
       h.each do |item|
@@ -37,7 +39,7 @@ module Search
       a
     end
 
-    def search(raw)
+    def search(raw, user)
       search_s = get_s raw
       s_words = search_s.split(' ')
       h = {}
@@ -48,7 +50,7 @@ module Search
       end
 
       snippets = Snippet.where(id: h.keys)
-      sort_snippets snippets, h
+      sort_snippets snippets, h, user
     end
   end
 end
