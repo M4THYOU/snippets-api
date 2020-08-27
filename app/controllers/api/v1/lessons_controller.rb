@@ -27,8 +27,7 @@ module Api
         group_config = { group_type: Rails.configuration.x.u_group_types.lesson, created_by_uid: uid }
         group = UGroup.create(group_config)
         # create roles
-        # URole.create({role_type: Rails.configuration.x.u_role_types.lesson_member, uid: uid, group_id: group.id, created_by_uid: uid})
-        URole.create({role_type: Rails.configuration.x.u_role_types.lesson_owner, uid: uid, group_id: group.id, created_by_uid: uid})
+        URole.create({role_type: Rails.configuration.x.u_role_types.owner, uid: uid, group_id: group.id, created_by_uid: uid})
         # create lessons
         if create_pages(pages, group.id, title, course)
           response = RenderJson.success 'Saved lesson', { group_id: group.id }
@@ -44,7 +43,7 @@ module Api
         uid = @current_user.id
         group_id = params[:id]
 
-        if User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.lesson_owner)
+        if User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.owner)
           title = lesson_update_params[:title]
           course = lesson_update_params[:course]
           pages = lesson_update_params[:pages]
@@ -71,7 +70,7 @@ module Api
         uid = @current_user.id
         group_id = params[:id]
 
-        if User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.lesson_owner)
+        if User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.owner)
           URole.where(['group_id = ?', group_id]).update_all(is_revoked: 1)
           Lesson.where(['group_id = ?', group_id]).delete_all
           UGroup.delete(group_id)
