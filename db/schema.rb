@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_16_151337) do
+ActiveRecord::Schema.define(version: 2020_08_27_150944) do
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2020_08_16_151337) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "group_id", null: false
     t.integer "group_order", default: 1, null: false
+  end
+
+  create_table "lessons_snippets", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "snippet_id", null: false
+    t.bigint "lesson_id", null: false
+    t.index ["lesson_id"], name: "index_lessons_snippets_on_lesson_id"
+    t.index ["snippet_id"], name: "index_lessons_snippets_on_snippet_id"
   end
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|

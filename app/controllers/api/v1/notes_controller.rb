@@ -9,15 +9,30 @@ module Api
         new_params = note_params
         snippet_id = new_params['snippet_id']
         notes = Note.where(['snippet_id = ?', snippet_id])
+        snippet = Snippet.find(snippet_id)
 
-        response = RenderJson.success 'Loaded notes', notes
-        render json: response, status: :ok
+        if snippet.user_has_access?(@current_user)
+          response = RenderJson.success 'Loaded notes', notes
+          status = :ok
+        else
+          response = RenderJson.error 'Invalid permissions', {}
+          status = :forbidden
+        end
+        render json: response, status: status
       end
 
       def create
         new_params = note_params
         snippet_id = new_params['snippet_id']
         snippet = Snippet.find(snippet_id)
+
+        unless snippet.user_has_access?(@current_user)
+          response = RenderJson.error 'Invalid permissions', {}
+          status = :forbidden
+          render json: response, status: status
+          return
+        end
+
         notes = new_params['notes']
         status = :ok
         if notes.length == 1

@@ -14,7 +14,7 @@ module Api
         uid = @current_user.id
         email = invitation_params[:email]
         group_id = invitation_params[:group_id]
-        unless User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.lesson_owner)
+        unless User.find(uid).role_action?(group_id, Rails.configuration.x.u_role_types.owner)
           render json: response, status: status
           return
         end
@@ -22,14 +22,14 @@ module Api
         user = User.find_by_email(email)
         if user.nil?
           user = User.create({ email: email, password: '0', password_confirmation: '0', is_invited: 1 })
-          user.add_role(uid, Rails.configuration.x.u_role_types.lesson_member, group_id)
+          user.add_role(uid, Rails.configuration.x.u_role_types.member, group_id)
 
           UserMailer.with(user: user, from_user: @current_user).account_invite.deliver_later
 
           response = RenderJson.success 'User Invited', {}
           status = :ok
         else
-          user.add_role(uid, Rails.configuration.x.u_role_types.lesson_member, group_id)
+          user.add_role(uid, Rails.configuration.x.u_role_types.member, group_id)
 
           UserMailer.with(user: user, from_user: @current_user).note_invite.deliver_later
 

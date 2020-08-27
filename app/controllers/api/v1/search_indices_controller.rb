@@ -7,7 +7,7 @@ module Api
         query = search_params[:query]
         limit = search_params[:limit].to_i
 
-        result = Search.search query
+        result = Search.search query, @current_user
         lim_result = result.first limit
         render json: {status: 'SUCCESS', message: 'Loaded snippets', data: lim_result}, status: :ok
       end

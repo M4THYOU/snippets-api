@@ -6,15 +6,21 @@ module Api
       include Indexing
 
       def index
-        snippets = Snippet.order('updated_at DESC').limit(50)
+        uid = @current_user.id
+        snippets = Snippet.where(['created_by_uid = ?', uid]).order('updated_at DESC').limit(50)
         response = RenderJson.success 'Loaded Snippets', snippets
         render json: response, status: :ok
       end
 
       def show
+        response = RenderJson.error 'Not authorized', {}
+        status = :forbidden
         snippet = Snippet.find(params[:id])
-        response = RenderJson.success 'Loaded snippet', snippet
-        render json: response, status: :ok
+        if snippet.user_has_access?(@current_user)
+          response = RenderJson.success 'Loaded snippet', snippet
+          status = :ok
+        end
+        render json: response, status: status
       end
 
       def create
